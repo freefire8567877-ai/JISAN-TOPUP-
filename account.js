@@ -6,12 +6,12 @@ var website_name = "JISAN TOPUP";
 // =======================================================
 // TELEGRAM CHANNEL LINK
 // =======================================================
-var telegram_channel_link = "https://www.facebook.com/2KJisanGamer";
+var telegram_channel_link = "https://t.me/jisantopup";
 
 // =======================================================
 // TELEGRAM GROUP LINK
 // =======================================================
-var telegram_group_link = "https://www.tiktok.com/@2kJisanGamer";
+var telegram_group_link = "https://www.facebook.com/2KJisanGamer";
 
 // =======================================================
 // YOUTUBE CHANNEL LINK
