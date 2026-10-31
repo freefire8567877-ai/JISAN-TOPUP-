@@ -4,14 +4,14 @@
 var website_name = "JISAN TOPUP";
 
 // =======================================================
-// TELEGRAM LINK
-// =======================================================
-var telegram_link = "t.me/JisanGamer69";
-
-// =======================================================
 // TELEGRAM CHANNEL LINK
 // =======================================================
-var telegram_channel_link = "https://t.me/jisantopup";
+var telegram_channel_link = "t.me/JisanGamer69";
+
+// =======================================================
+// TELEGRAM GROUP LINK
+// =======================================================
+var telegram_group_link = "https://t.me/jisantopup";
 
 // =======================================================
 // YOUTUBE CHANNEL LINK

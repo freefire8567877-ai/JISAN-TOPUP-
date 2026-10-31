@@ -30,8 +30,8 @@ function syncAccountLinks() {
     el.alt = siteName;
   });
 
-  var tgCh = (typeof telegram_link !== 'undefined' ? telegram_link : (window.telegram_link || (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.telegramChannel) || '')).trim();
-  var tgGrp = (typeof telegram_channel_link !== 'undefined' ? telegram_channel_link : (window.telegram_channel_link || (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.telegramGroup) || '')).trim();
+  var tgCh = (typeof telegram_channel_link !== 'undefined' ? telegram_channel_link : (window.telegram_channel_link || (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.telegramChannel) || '')).trim();
+  var tgGrp = (typeof telegram_group_link !== 'undefined' ? telegram_group_link : (window.telegram_group_link || (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.telegramGroup) || '')).trim();
   var ytCh = (typeof youtube_channel_link !== 'undefined' ? youtube_channel_link : (window.youtube_channel_link || (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.youtubeChannel) || '')).trim();
 
   function sanitize(url, placeholder) {
@@ -46,8 +46,8 @@ function syncAccountLinks() {
     return url;
   }
 
-  var validTgCh = sanitize(tgCh, 'telegram link');
-  var validTgGrp = sanitize(tgGrp, 'telegram channel link');
+  var validTgCh = sanitize(tgCh, 'telegram channel link');
+  var validTgGrp = sanitize(tgGrp, 'telegram group link');
   var validYtCh = sanitize(ytCh, 'YouTube channel link');
 
   function bindLinks(selector, url) {
@@ -1513,8 +1513,8 @@ function syncAccountLinks() {
     el.alt = siteName;
   });
 
-  var tgCh = (typeof telegram_link !== 'undefined' ? telegram_link : (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.telegramChannel) || '').trim();
-  var tgGrp = (typeof telegram_channel_link !== 'undefined' ? telegram_channel_link : (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.telegramGroup) || '').trim();
+  var tgCh = (typeof telegram_channel_link !== 'undefined' ? telegram_channel_link : (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.telegramChannel) || '').trim();
+  var tgGrp = (typeof telegram_group_link !== 'undefined' ? telegram_group_link : (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.telegramGroup) || '').trim();
   var ytCh = (typeof youtube_channel_link !== 'undefined' ? youtube_channel_link : (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.youtubeChannel) || '').trim();
 
   function sanitize(url, placeholder) {
@@ -1527,8 +1527,8 @@ function syncAccountLinks() {
     return url;
   }
 
-  var validTgCh = sanitize(tgCh, 'telegram link');
-  var validTgGrp = sanitize(tgGrp, 'telegram channel link');
+  var validTgCh = sanitize(tgCh, 'telegram channel link');
+  var validTgGrp = sanitize(tgGrp, 'telegram group link');
   var validYtCh = sanitize(ytCh, 'YouTube channel link');
 
   function bindLinks(selector, url) {
@@ -1588,16 +1588,16 @@ function fetchFreshAccountConfig() {
     try {
       var runner = new Function(txt + '\n;return {' +
         'website_name: (typeof website_name !== "undefined" ? website_name : null),' +
-        'telegram_link: (typeof telegram_link !== "undefined" ? telegram_link : null),' +
         'telegram_channel_link: (typeof telegram_channel_link !== "undefined" ? telegram_channel_link : null),' +
+        'telegram_group_link: (typeof telegram_group_link !== "undefined" ? telegram_group_link : null),' +
         'youtube_channel_link: (typeof youtube_channel_link !== "undefined" ? youtube_channel_link : null),' +
         'notification_text: (typeof notification_text !== "undefined" ? notification_text : null)' +
       '};');
       var cfg = runner();
       if (cfg) {
         if (cfg.website_name !== null) window.website_name = cfg.website_name;
-        if (cfg.telegram_link !== null) window.telegram_link = cfg.telegram_link;
         if (cfg.telegram_channel_link !== null) window.telegram_channel_link = cfg.telegram_channel_link;
+        if (cfg.telegram_group_link !== null) window.telegram_group_link = cfg.telegram_group_link;
         if (cfg.youtube_channel_link !== null) window.youtube_channel_link = cfg.youtube_channel_link;
         if (cfg.notification_text !== null) window.notification_text = cfg.notification_text;
         parsed = true;
@@ -1612,14 +1612,14 @@ function fetchFreshAccountConfig() {
         return m ? m[2].trim() : null;
       };
       var name = extractProp('website_name');
-      var tgCh = extractProp('telegram_link');
-      var tgGrp = extractProp('telegram_channel_link');
+      var tgCh = extractProp('telegram_channel_link');
+      var tgGrp = extractProp('telegram_group_link');
       var ytCh = extractProp('youtube_channel_link');
       var note = extractProp('notification_text');
 
       if (name !== null) window.website_name = name;
-      if (tgCh !== null) window.telegram_link = tgCh;
-      if (tgGrp !== null) window.telegram_channel_link = tgGrp;
+      if (tgCh !== null) window.telegram_channel_link = tgCh;
+      if (tgGrp !== null) window.telegram_group_link = tgGrp;
       if (ytCh !== null) window.youtube_channel_link = ytCh;
       if (note !== null) window.notification_text = note;
     }
@@ -2092,7 +2092,7 @@ setInterval(fetchFreshAccountConfig, 15000);
   var LOGIN_URL='#';
 
   var BALANCE=0;          // ইউজারের ওয়ালেট ব্যালেন্স (ব্যাকএন্ড থেকে বসান)
-  var HOWTO_URL='https://youtu.be/IV7zkSGo8KM?si=3_42lO9AYF2iClwH';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
+  var HOWTO_URL='#';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
 
   var sel={name:'',price:0,pay:'Wallet Pay'};
   var toastEl=document.getElementById('toast'), tt;
@@ -2175,7 +2175,7 @@ setInterval(fetchFreshAccountConfig, 15000);
   var LOGIN_URL='#';
 
   var BALANCE=0;          // ইউজারের ওয়ালেট ব্যালেন্স (ব্যাকএন্ড থেকে বসান)
-  var HOWTO_URL='https://youtu.be/IV7zkSGo8KM?si=3_42lO9AYF2iClwH';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
+  var HOWTO_URL='#';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
 
   var sel={name:'',price:0,pay:'Wallet Pay'};
   var toastEl=document.getElementById('toast'), tt;
@@ -2258,7 +2258,7 @@ setInterval(fetchFreshAccountConfig, 15000);
   var LOGIN_URL='#';
 
   var BALANCE=0;          // ইউজারের ওয়ালেট ব্যালেন্স (ব্যাকএন্ড থেকে বসান)
-  var HOWTO_URL='https://youtu.be/IV7zkSGo8KM?si=3_42lO9AYF2iClwH';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
+  var HOWTO_URL='#';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
 
   var sel={name:'',price:0,pay:'Wallet Pay'};
   var toastEl=document.getElementById('toast'), tt;
@@ -2341,7 +2341,7 @@ setInterval(fetchFreshAccountConfig, 15000);
   var LOGIN_URL='#';
 
   var BALANCE=0;          // ইউজারের ওয়ালেট ব্যালেন্স (ব্যাকএন্ড থেকে বসান)
-  var HOWTO_URL='https://youtu.be/IV7zkSGo8KM?si=3_42lO9AYF2iClwH';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
+  var HOWTO_URL='#';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
 
   var sel={name:'',price:0,pay:'Wallet Pay'};
   var toastEl=document.getElementById('toast'), tt;
@@ -2424,7 +2424,7 @@ setInterval(fetchFreshAccountConfig, 15000);
   var LOGIN_URL='#';
 
   var BALANCE=0;          // ইউজারের ওয়ালেট ব্যালেন্স (ব্যাকএন্ড থেকে বসান)
-  var HOWTO_URL='https://youtu.be/IV7zkSGo8KM?si=3_42lO9AYF2iClwH';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
+  var HOWTO_URL='#';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
 
   var sel={name:'',price:0,pay:'Wallet Pay'};
   var toastEl=document.getElementById('toast'), tt;
