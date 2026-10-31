@@ -770,7 +770,7 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
   
   <div class="sec"><h2><em>SPECIAL OFFER</em></h2></div>
   <div class="grid">
-    <a class="card" href="#weekly-monthly" data-open="weekly-monthly"><div class="thumb ph"><img src="WEEKLYMONTHLY.jpg" alt="Weekly/Monthly" loading="lazy" decoding="async"></div><p>Weekly/Monthly</p></a> 
+    <a class="card" href="#weekly-monthly" data-open="weekly-monthly"><div class="thumb ph"><img src="WEEKLYMONTHLY.jpg" alt="Weekly/Monthly Offer" loading="lazy" decoding="async"></div><p>Weekly/Monthly Offer</p></a> 
   </div>
 
   <div class="sec"><h2><em>FREE FIRE TOPUP</em></h2></div>
@@ -792,6 +792,86 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
 
 <main class="wrap" id="ffView" hidden>
   <button class="pv-back" type="button" id="ffBack"><svg class="i"><use href="#arr"/></svg>Back</button>
+  
+  <!-- WEEKLY/MONTHLY OFFER PAGE -->
+<main class="wrap" id="wmView" hidden>
+  <button class="pv-back" type="button" id="wmBack"><svg class="i"><use href="#arr"/></svg>Back</button>
+
+  <section class="pv-hero">
+    <div class="pv-img"><div class="thumb ph"><img src="WEEKLYMONTHLY.jpg" alt="Weekly/Monthly Offer"></div></div>
+    <div class="pv-info">
+      <h1>WEEKLY/MONTHLY</h1>
+      <span class="pv-pill"><svg viewBox="0 0 24 24"><use href="#bolt"/></svg>২ সেকেন্ডে টপআপ</span>
+    </div>
+  </section>
+
+  <section class="pv-box">
+    <div class="pv-head"><span class="n">1</span><h2>Select Recharge</h2></div>
+    <div class="pv-body">
+      <div class="pk-grid" id="wmPkGrid">
+        <button type="button" class="pk" data-name="WEEKLY" data-price="150"><span>WEEKLY</span><b>BDT 150</b></button>
+        <button type="button" class="pk" data-name="MONTHLY" data-price="750"><span>MONTHLY</span><b>BDT 750</b></button>
+      </div>
+      <a class="how" id="wmHow" href="#"><svg class="i"><use href="#ext"/></svg><span>কিভাবে অর্ডার করবেন?</span><svg class="i ar"><use href="#arr"/></svg></a>
+    </div>
+  </section>
+
+  <section class="pv-box">
+    <div class="pv-head"><span class="n">2</span><h2>Account Info</h2></div>
+    <div class="pv-body">
+      <label class="lbl" for="wmInp">এখানে গেমের আইডি কোড দিন</label>
+      <input class="inp" id="wmInp" type="text" inputmode="numeric" autocomplete="off" placeholder="এখানে গেমের আইডি কোড দিন">
+      <button class="btn" type="button" id="wmChk">আপনার গেম আইডির নাম চেক করুন</button>
+      <div class="pname" id="wmPname"></div>
+    </div>
+  </section>
+
+  <section class="pv-box">
+    <div class="pv-head"><span class="n">3</span><h2>Select one option</h2></div>
+    <div class="pv-body">
+      <div class="po-grid" id="wmPo">
+        <div role="button" tabindex="0" class="po on" data-pay="Wallet Pay">
+          <div class="pbx"><img src="wallet.jpg" alt="" onerror="this.style.display='none'"></div>
+          <div class="pft">Wallet Pay</div>
+        </div>
+        <div role="button" tabindex="0" class="po" data-pay="Instant Pay">
+          <div class="pbx"><img src="andmoney.jpg" alt="" onerror="this.style.display='none'"></div>
+          <div class="pft">Instant Pay</div>
+        </div>
+      </div>
+
+      <div class="bal" id="wmBalRow" style="display:none">
+        <svg class="i"><use href="#info"/></svg>
+        <span>আপনার অ্যাকাউন্ট ব্যালেন্স <b>৳ <em id="wmBal">0.00</em></b></span>
+        <button type="button" class="rf" id="wmRf" aria-label="Refresh"><svg class="i"><use href="#refresh"/></svg></button>
+      </div>
+      <p class="hint need"><svg class="i"><use href="#info"/></svg><span>প্রোডাক্ট কিনতে আপনার প্রয়োজন <b id="wmNeed">0</b> ৳ ।</span></p>
+      <p class="hint warnx" id="wmLoginWarn"><svg class="i"><use href="#info"/></svg><span>Please Login To Purchase</span></p>
+      <a class="btn login" id="wmBuy" href="#">Login</a>
+    </div>
+  </section>
+
+  <section class="pv-box rules">
+    <div class="pv-head rh"><svg class="i"><use href="#doc"/></svg><h2>Rules &amp; Conditions</h2></div>
+    <div class="pv-body">
+      <ul class="rl">
+        <li>সঠিক প্লেয়ার আইডি দিয়ে অর্ডার করুন। ভুল আইডিতে টপআপ হয়ে গেলে কর্তৃপক্ষ দায়ী থাকবে না।</li>
+        <li>অর্ডার করার আগে আইডির নাম চেক করে নিন।</li>
+        <li>টপআপ সম্পন্ন হতে সাধারণত ২ সেকেন্ড থেকে কয়েক মিনিট সময় লাগতে পারে।</li>
+        <li>একবার অর্ডার সাবমিট করার পর বাতিল বা রিফান্ড করা হয় না।</li>
+        <li>যেকোনো সমস্যায় অর্ডারের স্ক্রিনশট সহ টেলিগ্রামে যোগাযোগ করুন।</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="pv-contact">
+    <h2>Contact Us</h2>
+    <a class="pv-help" href="#" data-link="telegram-channel">
+      <span class="ti"><svg class="f"><use href="#tg"/></svg></span>
+      <span><b>Telegram HelpLine <svg class="vb" viewBox="0 0 24 24"><path fill="#2979ff" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.67-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.34 2.19c-1.39-.46-2.9-.2-3.91.81s-1.27 2.52-.81 3.91C2.63 9.33 1.75 10.57 1.75 12s.88 2.67 2.19 3.34c-.46 1.39-.2 2.9.81 3.91s2.52 1.27 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.67-.88 3.34-2.19c1.39.46 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34z"/><polygon fill="#fff" points="9.65 16.4 5.8 12.55 7.2 11.15 9.65 13.6 16.8 6.45 18.2 7.85"/></svg></b><p>সকাল ৮টা থেকে রাত ১২টা</p></span>
+    </a>
+  </section>
+</main>
 
   <section class="pv-hero">
     <div class="pv-img"><div class="thumb ph"><img src="FF LIKES.jpg" alt="FF Likes"></div></div>
@@ -2180,7 +2260,7 @@ setInterval(fetchFreshAccountConfig, 15000);
   var LOGIN_URL='#';
 
   var BALANCE=0;          // ইউজারের ওয়ালেট ব্যালেন্স (ব্যাকএন্ড থেকে বসান)
-  var HOWTO_URL='https://youtube.com/shorts/uviC_STWAdQ?feature=share';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
+  var HOWTO_URL='#';      // "কিভাবে অর্ডার করবেন?" ভিডিও/গাইডের লিংক
 
   var sel={name:'',price:0,pay:'Wallet Pay'};
   var toastEl=document.getElementById('toast'), tt;
