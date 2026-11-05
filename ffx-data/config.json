@@ -7,18 +7,5 @@
     "default:Banner 1.jpg",
     "default:Banner 2.jpg"
   ],
-  "quick": [
-    {
-      "label": "Telegram",
-      "url": "https://t.me/jisantopup"
-    },
-    {
-      "label": "TG Channel",
-      "url": ""
-    },
-    {
-      "label": "YouTube",
-      "url": ""
-    }
-  ]
+  "quick": null
 }
