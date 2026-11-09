@@ -62,5 +62,7 @@
       ]
     }
   },
-  "texts": null
+  "texts": {
+    "siteName": "jisantopup.onrender.com"
+  }
 }
